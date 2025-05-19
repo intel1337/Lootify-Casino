@@ -5,6 +5,7 @@ export async function POST(request) {
     try {
         const body = await request.json();
         const { userId, argent } = body;
+        console.log(argent, userId)
 
         if (!userId || argent === undefined) {
             return NextResponse.json(
@@ -12,34 +13,37 @@ export async function POST(request) {
                 { status: 400 }
             );
         }
+        const user = await prisma.user.findFirst({
+                where: { id: userId },
+            });
 
         // Générer un nombre aléatoire entre 0 et 99
         const randomNumber = Math.floor(Math.random() * 100);
 
-        let nouveauScore;
+        let nouveauScore = 0;
         let message;
 
         if (randomNumber === 1) {
             // Gagné : score x5
-            nouveauScore = argent * 5;
+            let tempo = user.argent + argent * 5;
+            nouveauScore = tempo;
             message = 'Félicitations ! Vous avez gagné !';
+            message = nouveauScore;
         } else {
-            // Perdu : score à 0
-            if(nouveauScore <= 0){
-                message = "Vous N'avez plus d'argent, vous etes pauvre !!!"
-            }
-            else{
-                nouveauScore = nouveauScore -100;
+                nouveauScore = user.argent - argent;
                 message = 'Dommage, vous avez perdu !';
-            }
-            
+                message = nouveauScore;
+
+              
         }
 
         // Mettre à jour le score de l'utilisateur
-        await prisma.user.update({
-            where: { id: userId },
-            data: { argent: nouveauScore }
-        });
+        
+
+         await prisma.user.update({
+                where: { id: userId },
+                data: { argent: nouveauScore }
+            });
 
         return NextResponse.json({
             nouveauScore,
