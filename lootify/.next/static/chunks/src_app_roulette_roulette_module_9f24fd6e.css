@@ -1,0 +1,125 @@
+/* [project]/src/app/roulette/roulette.module.css [app-client] (css) */
+.roulette-module__JA9vHG__container {
+  color: #fff;
+  background: linear-gradient(145deg, #1a1a1a, #2a2a2a);
+  border-radius: 15px;
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  box-shadow: 0 8px 32px #0000004d;
+}
+
+.roulette-module__JA9vHG__title {
+  text-align: center;
+  color: gold;
+  text-shadow: 0 0 10px #ffd7004d;
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+}
+
+.roulette-module__JA9vHG__gameContainer {
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  display: flex;
+}
+
+.roulette-module__JA9vHG__form {
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+}
+
+.roulette-module__JA9vHG__inputGroup {
+  flex-direction: column;
+  gap: .5rem;
+  display: flex;
+}
+
+.roulette-module__JA9vHG__inputGroup label {
+  color: gold;
+  font-size: 1.1rem;
+}
+
+.roulette-module__JA9vHG__input {
+  color: #fff;
+  background: #ffffff1a;
+  border: 2px solid gold;
+  border-radius: 8px;
+  padding: 1rem;
+  font-size: 1.1rem;
+  transition: all .3s;
+}
+
+.roulette-module__JA9vHG__input:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px #ffd7004d;
+}
+
+.roulette-module__JA9vHG__button {
+  color: #000;
+  cursor: pointer;
+  background: linear-gradient(145deg, gold, orange);
+  border: none;
+  border-radius: 8px;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition: all .3s;
+}
+
+.roulette-module__JA9vHG__button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px #ffd70066;
+}
+
+.roulette-module__JA9vHG__button:disabled {
+  cursor: not-allowed;
+  opacity: .7;
+  background: #666;
+}
+
+.roulette-module__JA9vHG__errorMessage {
+  color: #f44;
+  text-align: center;
+  background: #ff44441a;
+  border-radius: 8px;
+  width: 100%;
+  padding: 1rem;
+}
+
+.roulette-module__JA9vHG__resultat {
+  text-align: center;
+  background: #ffd7001a;
+  border-radius: 12px;
+  width: 100%;
+  padding: 2rem;
+  animation: .5s roulette-module__JA9vHG__fadeIn;
+}
+
+.roulette-module__JA9vHG__resultat h2 {
+  color: gold;
+  margin-bottom: 1rem;
+}
+
+.roulette-module__JA9vHG__resultat p {
+  margin: .5rem 0;
+  font-size: 1.1rem;
+}
+
+@keyframes roulette-module__JA9vHG__fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/*# sourceMappingURL=src_app_roulette_roulette_module_9f24fd6e.css.map*/
